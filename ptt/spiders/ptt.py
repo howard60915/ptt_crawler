@@ -3,7 +3,7 @@ import logging
 import scrapy
 from scrapy.http import FormRequest
 from ptt.items import PostItem
-# -*- coding: utf-8 -*-
+
 class PTTSpider(scrapy.Spider):
   name = 'ptt'
   allowed_domains = ['ptt.cc']
@@ -38,13 +38,7 @@ class PTTSpider(scrapy.Spider):
       else:
         logging.warning("MAX PAGE reached")
 
-    #   title = scrapy.Field()
-    #   author = scrapy.Field()
-    #   date = scrapy.Field()
-    #   commet = scrapy.Field()
-    #   content = scrapy.Field()
-    #   score = scrapy.Field()
-    #   url = scrapy.Field()
+
   def post_parse(self, response):
     print('==================Shit Rocks+++++++++++++++++++++++++++')
     item = PostItem()
